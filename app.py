@@ -1,12 +1,11 @@
 import pandas as pd  # pip install pandas openpyxl
 import plotly.express as px  # pip install plotly-express
 import streamlit as st  # pip install streamlit
-import requests
 
-# emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
+
 st.set_page_config(page_title="Bike Sales Dashboard", page_icon=":bar_chart:", layout="wide")
 
-# ---- READ EXCEL ----
+# ---- READ CSV ----
 @st.cache
 def get_data():
     return pd.read_csv('bike_sales_data.csv', parse_dates=['Date'])
@@ -38,7 +37,7 @@ df_selection = df.query(
     "Country == @country & Customer_Gender == @gender & @year[0] <= Year <= @year[1] "
 )
 
-
+#---- Plotly things ----
 
 sales_per_year = df_selection.groupby(by='Year')['Profit'].sum()
 sales_per_year = pd.DataFrame({'Year':sales_per_year.index, 'Total Profit':sales_per_year.values})
