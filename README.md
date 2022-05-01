@@ -1,5 +1,8 @@
 ## Bike Sales Dashboard
 
+Visit my app @ 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/thngph/bike-sales-dashboard/main/app.py)
+
 ### About the project
 
 The project contains source code for building a dashboard for [Bike Sales dataset](https://www.kaggle.com/datasets/wafaasoliman/bike-store-sales).
